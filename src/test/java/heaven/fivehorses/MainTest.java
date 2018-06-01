@@ -1,15 +1,13 @@
 package heaven.fivehorses;
 
-import  junit.framework.*;
+import junit.framework.TestCase;
 import org.junit.Test;
 
-public class MainTest extends TestCase  {
+public class MainTest extends TestCase {
 
     @Test
-    public void testAdd1Plus1() {
-
+    public void test_sum() {
         Main main = new Main();
-        assertEquals(3, main.add(1, 2));
+        assertEquals(3, main.sum(1, 2));
     }
-
 }
