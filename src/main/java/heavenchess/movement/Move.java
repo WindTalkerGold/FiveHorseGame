@@ -6,6 +6,14 @@ public class Move {
         this.end = end;
     }
 
-    private final Point start;
-    private final Point end;
+    public Point getStart() {
+        return start;
+    }
+
+    public Point getEnd() {
+        return end;
+    }
+
+    final Point start;
+    final Point end;
 }
