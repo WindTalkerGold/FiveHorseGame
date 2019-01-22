@@ -11,6 +11,10 @@ public class BasicChessboardTest extends TestCase {
     public void testInitChessboard() {
         BasicChessboard chessboard = new BasicChessboard();
         validateChessboard(chessboard, 0, 4);
+        assertEquals(15, chessboard.countSlotsOfState(ChessboardState.Empty));
+        assertEquals(5, chessboard.countSlotsOfState(ChessboardState.LeftOn));
+        assertEquals(5, chessboard.countSlotsOfState(ChessboardState.RightOn));
+        assertEquals(0, chessboard.countSlotsOfState(ChessboardState.Invalid));
     }
 
     @Test

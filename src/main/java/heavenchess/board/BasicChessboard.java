@@ -79,6 +79,31 @@ public class BasicChessboard implements Chessboard {
     }
 
     @Override
+    public boolean flip(Point point) {
+        ChessboardState originalState = getSlotState(point);
+        if(originalState != ChessboardState.LeftOn && originalState != ChessboardState.RightOn) {
+            return false;
+        }
+
+        ChessboardState newState = originalState.getFlip();
+        chessboard[point.getX()][point.getY()] = newState;
+        pointsOfState.get(originalState.ordinal()).remove(point);
+        pointsOfState.get(newState.ordinal()).remove(point);
+        return true;
+    }
+
+    @Override
+    public boolean set(Point point, ChessboardState state) {
+        ChessboardState originalState = getSlotState(point);
+        if(originalState == ChessboardState.Invalid || originalState == state)
+            return false;
+        chessboard[point.getX()][point.getY()] = state;
+        pointsOfState.get(state.ordinal()).add(point);
+        pointsOfState.get(originalState.ordinal()).remove(point);
+        return true;
+    }
+
+    @Override
     public boolean move(Move move, ChessboardState moveFor) {
         if(!getValidator().isMovementValid(move, this, moveFor)) {
             return false;
