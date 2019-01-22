@@ -1,14 +1,14 @@
 package heavenchess.board;
 
-import heavenchess.movement.Point;
-
-import java.util.Iterator;
+import heavenchess.movement.*;
 
 public interface Chessboard {
     int countSlotsOfState(ChessboardState stat);
-    Iterator<Point> getSlotsOfState(ChessboardState stat);
+    Iterable<Point> getSlotsOfState(ChessboardState stat);
     ChessboardState getSlotState(Point point);
-    Iterator<ChessboardState> getSlotsState(Iterator<Point> points);
+    Iterable<ChessboardState> getSlotsState(Iterable<Point> points);
 
     ChessboardState[][] getChessboard();
+    ChessboardValidator getValidator();
+    boolean move(Move move, ChessboardState moveFor);
 }

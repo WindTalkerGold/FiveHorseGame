@@ -2,18 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f22c7f37-e546-4a0c-b525-b78778af90d4" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/docs/README.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/heavenchess/ChessOptions.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/heavenchess/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/heavenchess/board/Chessboard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/heavenchess/board/ChessboardState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/heavenchess/movement/ChessboardValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/heavenchess/movement/Move.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/heavenchess/movement/MoveProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/heavenchess/movement/Point.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/heavenchess/ChessOptionsTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/heavenchess/board/BasicChessboard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/heavenchess/movement/BasicModeValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/heavenchess/board/BasicChessboardTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/heavenchess/board/Chessboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/heavenchess/board/Chessboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/heavenchess/movement/ChessboardValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/heavenchess/movement/ChessboardValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/heavenchess/movement/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/heavenchess/movement/Move.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/heavenchess/movement/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/heavenchess/movement/Point.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -26,29 +23,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/heavenchess/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="9" lean-forward="true" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MoveProvider.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/heavenchess/movement/MoveProvider.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Move.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/heavenchess/movement/Move.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+            <state relative-caret-position="170">
+              <caret line="13" column="16" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
+              <folding>
+                <element signature="e#180#181#0" expanded="true" />
+                <element signature="e#208#209#0" expanded="true" />
+                <element signature="e#237#238#0" expanded="true" />
+                <element signature="e#263#264#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -56,8 +41,14 @@
       <file leaf-file-name="Point.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/heavenchess/movement/Point.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+            <state relative-caret-position="102">
+              <caret line="6" selection-start-line="6" selection-end-line="6" />
+              <folding>
+                <element signature="e#576#577#0" expanded="true" />
+                <element signature="e#600#601#0" expanded="true" />
+                <element signature="e#625#626#0" expanded="true" />
+                <element signature="e#649#650#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -65,17 +56,8 @@
       <file leaf-file-name="ChessboardValidator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/heavenchess/movement/ChessboardValidator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="78" selection-start-line="2" selection-start-column="78" selection-end-line="2" selection-end-column="78" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ChessOptionsTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/heavenchess/ChessOptionsTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="49" column="63" lean-forward="true" selection-start-line="49" selection-start-column="63" selection-end-line="49" selection-end-column="63" />
+            <state relative-caret-position="119">
+              <caret line="8" column="89" selection-start-line="8" selection-start-column="60" selection-end-line="8" selection-end-column="89" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -83,18 +65,49 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ChessOptions.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/heavenchess/ChessOptions.java">
+      <file leaf-file-name="BasicModeValidator.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/heavenchess/movement/BasicModeValidator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" selection-start-line="8" selection-end-line="8" />
+            <state relative-caret-position="178">
+              <caret line="66" column="65" selection-start-line="66" selection-start-column="65" selection-end-line="66" selection-end-column="65" />
               <folding>
-                <element signature="e#200#201#0" expanded="true" />
-                <element signature="e#230#231#0" expanded="true" />
-                <element signature="e#265#266#0" expanded="true" />
-                <element signature="e#296#297#0" expanded="true" />
-                <element signature="e#429#430#0" expanded="true" />
-                <element signature="e#459#460#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestCase.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/junit/framework/TestCase.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="191">
+              <caret line="102" selection-start-line="102" selection-end-line="102" />
+              <folding>
+                <element signature="e#2608#2609#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ChessOptionsTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/heavenchess/ChessOptionsTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="6" column="47" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="47" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BasicChessboardTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/heavenchess/board/BasicChessboardTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="347">
+              <caret line="65" column="43" selection-start-line="65" selection-start-column="43" selection-end-line="65" selection-end-column="43" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -103,8 +116,17 @@
       <file leaf-file-name="Chessboard.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/heavenchess/board/Chessboard.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="46" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
+            <state relative-caret-position="51">
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BasicChessboard.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/heavenchess/board/BasicChessboard.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="303">
+              <caret line="82" selection-start-line="82" selection-end-line="82" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -112,20 +134,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/docs/README.txt">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="103" selection-start-line="18" selection-start-column="103" selection-end-line="18" selection-end-column="103" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ChessboardState.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/heavenchess/board/ChessboardState.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="35" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
+            <state relative-caret-position="255">
+              <caret line="15" column="21" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -135,9 +148,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -164,17 +177,20 @@
         <option value="$PROJECT_DIR$/src/main/java/heaven/clr/Clr.java" />
         <option value="$PROJECT_DIR$/src/main/java/heaven/clr/ClrExe.java" />
         <option value="$PROJECT_DIR$/src/test/java/heaven/clr/ClrExeMain.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/heavenchess/Main.java" />
         <option value="$PROJECT_DIR$/src/test/java/heavenchess/ChessOptionsTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/heavenchess/movement/Point.java" />
-        <option value="$PROJECT_DIR$/src/main/java/heavenchess/movement/ChessboardValidator.java" />
         <option value="$PROJECT_DIR$/src/main/java/heavenchess/movement/MoveProvider.java" />
-        <option value="$PROJECT_DIR$/src/main/java/heavenchess/movement/Move.java" />
         <option value="$PROJECT_DIR$/src/main/java/heavenchess/ChessOptions.java" />
         <option value="$PROJECT_DIR$/docs/README.txt" />
         <option value="$PROJECT_DIR$/src/main/java/heavenchess/board/ChessboardState.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/heavenchess/movement/Point.java" />
+        <option value="$PROJECT_DIR$/src/main/java/heavenchess/movement/Move.java" />
+        <option value="$PROJECT_DIR$/src/main/java/heavenchess/movement/ChessboardValidator.java" />
         <option value="$PROJECT_DIR$/src/main/java/heavenchess/board/Chessboard.java" />
+        <option value="$PROJECT_DIR$/src/main/java/heavenchess/board/BasicChessboard.java" />
+        <option value="$PROJECT_DIR$/src/main/java/heavenchess/movement/BasicModeValidator.java" />
+        <option value="$PROJECT_DIR$/src/test/java/heavenchess/board/BasicChessboardTest.java" />
       </list>
     </option>
   </component>
@@ -201,9 +217,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -279,25 +292,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="heaven" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FiveHorseGame" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FiveHorseGame" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="heaven" type="462c0819:PsiDirectoryNode" />
-              <item name="clr" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FiveHorseGame" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FiveHorseGame" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="heaven" type="462c0819:PsiDirectoryNode" />
-              <item name="fivehorses" type="462c0819:PsiDirectoryNode" />
+              <item name="heavenchess" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="FiveHorseGame" type="b2602c69:ProjectViewProjectNode" />
@@ -306,6 +301,7 @@
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="heavenchess" type="462c0819:PsiDirectoryNode" />
+              <item name="board" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="FiveHorseGame" type="b2602c69:ProjectViewProjectNode" />
@@ -315,16 +311,20 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="extract.method.default.visibility" value="private" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RunDashboard">
@@ -339,33 +339,22 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ChessOptionsTest.testBothBot">
-    <configuration name="ClrExeMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="heaven.clr.ClrExeMain" />
-      <module name="FiveHorseGame" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="heaven.clr.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-    </configuration>
+  <component name="RunManager" selected="JUnit.BasicChessboardTest.testDiagonalMove">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
-    <configuration name="ChessOptionsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BasicChessboardTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="FiveHorseGame" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="heavenchess.*" />
+          <option name="PATTERN" value="heavenchess.board.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="heavenchess" />
-      <option name="MAIN_CLASS_NAME" value="heavenchess.ChessOptionsTest" />
+      <option name="PACKAGE_NAME" value="heavenchess.board" />
+      <option name="MAIN_CLASS_NAME" value="heavenchess.board.BasicChessboardTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -377,19 +366,19 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="ChessOptionsTest.testBothBot" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BasicChessboardTest.testDiagonalMove" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="FiveHorseGame" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="heavenchess.*" />
+          <option name="PATTERN" value="heavenchess.board.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="heavenchess" />
-      <option name="MAIN_CLASS_NAME" value="heavenchess.ChessOptionsTest" />
-      <option name="METHOD_NAME" value="testBothBot" />
+      <option name="PACKAGE_NAME" value="heavenchess.board" />
+      <option name="MAIN_CLASS_NAME" value="heavenchess.board.BasicChessboardTest" />
+      <option name="METHOD_NAME" value="testDiagonalMove" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -400,19 +389,19 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="ChessOptionsTest.testBothSizeHuman" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BasicChessboardTest.testInitChessboard" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="FiveHorseGame" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="heavenchess.*" />
+          <option name="PATTERN" value="heavenchess.board.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="heavenchess" />
-      <option name="MAIN_CLASS_NAME" value="heavenchess.ChessOptionsTest" />
-      <option name="METHOD_NAME" value="testBothSizeHuman" />
+      <option name="PACKAGE_NAME" value="heavenchess.board" />
+      <option name="MAIN_CLASS_NAME" value="heavenchess.board.BasicChessboardTest" />
+      <option name="METHOD_NAME" value="testInitChessboard" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -423,19 +412,42 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="MainTest.test_collectionHashCode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BasicChessboardTest.testMovement" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="FiveHorseGame" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="heaven.fivehorses.*" />
+          <option name="PATTERN" value="heavenchess.board.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="heaven.fivehorses" />
-      <option name="MAIN_CLASS_NAME" value="heaven.fivehorses.MainTest" />
-      <option name="METHOD_NAME" value="test_collectionHashCode" />
+      <option name="PACKAGE_NAME" value="heavenchess.board" />
+      <option name="MAIN_CLASS_NAME" value="heavenchess.board.BasicChessboardTest" />
+      <option name="METHOD_NAME" value="testMovement" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="BasicChessboardTest.testVerticalMovement" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="FiveHorseGame" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="heavenchess.board.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="heavenchess.board" />
+      <option name="MAIN_CLASS_NAME" value="heavenchess.board.BasicChessboardTest" />
+      <option name="METHOD_NAME" value="testVerticalMovement" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -485,19 +497,19 @@
       <listeners />
     </configuration>
     <list>
-      <item itemvalue="JUnit.MainTest.test_collectionHashCode" />
-      <item itemvalue="Application.ClrExeMain" />
-      <item itemvalue="JUnit.ChessOptionsTest.testBothSizeHuman" />
-      <item itemvalue="JUnit.ChessOptionsTest" />
-      <item itemvalue="JUnit.ChessOptionsTest.testBothBot" />
+      <item itemvalue="JUnit.BasicChessboardTest.testInitChessboard" />
+      <item itemvalue="JUnit.BasicChessboardTest.testMovement" />
+      <item itemvalue="JUnit.BasicChessboardTest" />
+      <item itemvalue="JUnit.BasicChessboardTest.testVerticalMovement" />
+      <item itemvalue="JUnit.BasicChessboardTest.testDiagonalMove" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ChessOptionsTest.testBothBot" />
-        <item itemvalue="JUnit.ChessOptionsTest" />
-        <item itemvalue="JUnit.ChessOptionsTest.testBothSizeHuman" />
-        <item itemvalue="Application.ClrExeMain" />
-        <item itemvalue="JUnit.MainTest.test_collectionHashCode" />
+        <item itemvalue="JUnit.BasicChessboardTest.testDiagonalMove" />
+        <item itemvalue="JUnit.BasicChessboardTest" />
+        <item itemvalue="JUnit.BasicChessboardTest.testVerticalMovement" />
+        <item itemvalue="JUnit.BasicChessboardTest.testMovement" />
+        <item itemvalue="JUnit.BasicChessboardTest.testInitChessboard" />
       </list>
     </recent_temporary>
   </component>
@@ -519,43 +531,45 @@
       <workItem from="1545048907285" duration="3009000" />
       <workItem from="1545052206703" duration="1215000" />
       <workItem from="1547991521505" duration="3759000" />
+      <workItem from="1548075858100" duration="8511000" />
+      <workItem from="1548158024462" duration="1391000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ChessBoardInitTest - 2018.06.01 at 22h 30m 18s.xml">
-      <configuration name="ChessBoardInitTest" configurationId="JUnit" />
+    <history-entry file="BasicChessboardTest_testMovement - 2019.01.22 at 19h 56m 45s.xml">
+      <configuration name="BasicChessboardTest.testMovement" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ChessBoardInitTest_test_chessBoardInitPositionMovements_04 - 2018.06.01 at 22h 31m 47s.xml">
-      <configuration name="ChessBoardInitTest.test_chessBoardInitPositionMovements_04" configurationId="JUnit" />
+    <history-entry file="BasicChessboardTest_testVerticalMovement - 2019.01.22 at 19h 59m 32s.xml">
+      <configuration name="BasicChessboardTest.testVerticalMovement" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ChessBoardInitTest - 2018.06.01 at 22h 33m 36s.xml">
-      <configuration name="ChessBoardInitTest" configurationId="JUnit" />
+    <history-entry file="BasicChessboardTest_testVerticalMovement - 2019.01.22 at 20h 02m 14s.xml">
+      <configuration name="BasicChessboardTest.testVerticalMovement" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MainTest_test_collectionHashCode - 2018.10.15 at 21h 35m 33s.xml">
-      <configuration name="MainTest.test_collectionHashCode" configurationId="JUnit" />
+    <history-entry file="BasicChessboardTest_testVerticalMovement - 2019.01.22 at 20h 02m 37s.xml">
+      <configuration name="BasicChessboardTest.testVerticalMovement" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MainTest_test_collectionHashCode - 2018.10.15 at 21h 35m 55s.xml">
-      <configuration name="MainTest.test_collectionHashCode" configurationId="JUnit" />
+    <history-entry file="BasicChessboardTest - 2019.01.22 at 20h 04m 58s.xml">
+      <configuration name="BasicChessboardTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MainTest_test_collectionHashCode - 2018.10.15 at 22h 11m 22s.xml">
-      <configuration name="MainTest.test_collectionHashCode" configurationId="JUnit" />
+    <history-entry file="BasicChessboardTest_testDiagonalMove - 2019.01.22 at 20h 06m 07s.xml">
+      <configuration name="BasicChessboardTest.testDiagonalMove" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MainTest_test_collectionHashCode - 2018.10.15 at 22h 11m 32s.xml">
-      <configuration name="MainTest.test_collectionHashCode" configurationId="JUnit" />
+    <history-entry file="BasicChessboardTest_testDiagonalMove - 2019.01.22 at 20h 06m 37s.xml">
+      <configuration name="BasicChessboardTest.testDiagonalMove" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ChessOptionsTest_testBothSizeHuman - 2019.01.20 at 22h 18m 25s.xml">
-      <configuration name="ChessOptionsTest.testBothSizeHuman" configurationId="JUnit" />
+    <history-entry file="BasicChessboardTest_testDiagonalMove - 2019.01.22 at 20h 06m 59s.xml">
+      <configuration name="BasicChessboardTest.testDiagonalMove" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ChessOptionsTest - 2019.01.20 at 22h 20m 11s.xml">
-      <configuration name="ChessOptionsTest" configurationId="JUnit" />
+    <history-entry file="BasicChessboardTest_testDiagonalMove - 2019.01.22 at 20h 08m 05s.xml">
+      <configuration name="BasicChessboardTest.testDiagonalMove" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ChessOptionsTest_testBothBot - 2019.01.20 at 22h 20m 27s.xml">
-      <configuration name="ChessOptionsTest.testBothBot" configurationId="JUnit" />
+    <history-entry file="BasicChessboardTest_testDiagonalMove - 2019.01.22 at 20h 14m 48s.xml">
+      <configuration name="BasicChessboardTest.testDiagonalMove" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22959000" />
+    <option name="totallyTimeSpent" value="32861000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -568,6 +582,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3293348" />
@@ -579,18 +594,18 @@
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3293348" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.34460196" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.34460196" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.3293348" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26332623" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26865673" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3991276" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -619,49 +634,23 @@
           <properties />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/heavenchess/board/BasicChessboardTest.java</url>
+          <line>19</line>
+          <properties />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/heavenchess/board/BasicChessboardTest.java</url>
+          <line>52</line>
+          <properties />
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="2" />
+      <option name="time" value="7" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_77/src.zip!/java/lang/Integer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14110">
-          <caret line="865" column="11" selection-start-line="865" selection-start-column="11" selection-end-line="865" selection-end-column="11" />
-          <folding>
-            <element signature="e#32573#33278#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fundmental/Teacher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-          <folding>
-            <element signature="e#186#187#0" expanded="true" />
-            <element signature="e#234#235#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_77/src.zip!/java/util/ArrayList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8177">
-          <caret line="518" column="19" selection-start-line="518" selection-start-column="19" selection-end-line="518" selection-end-column="19" />
-          <folding>
-            <element signature="e#18226#19411#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/heaven/fivehorses/battle/Direction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/heaven/fivehorses/battle/ChessBoardPosition.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -678,9 +667,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -688,11 +674,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="833">
           <caret line="54" column="43" lean-forward="true" selection-start-line="54" selection-start-column="43" selection-end-line="54" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#486#487#0" expanded="true" />
-            <element signature="e#526#527#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -740,9 +721,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -774,9 +752,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="9" column="31" lean-forward="true" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -843,9 +818,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="14110">
           <caret line="865" column="11" selection-start-line="865" selection-start-column="11" selection-end-line="865" selection-end-column="11" />
-          <folding>
-            <element signature="e#32573#33278#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -853,10 +825,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" selection-start-line="2" selection-end-line="2" />
-          <folding>
-            <element signature="e#186#187#0" expanded="true" />
-            <element signature="e#234#235#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -871,11 +839,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="833">
           <caret line="54" column="43" selection-start-line="54" selection-start-column="43" selection-end-line="54" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#486#487#0" expanded="true" />
-            <element signature="e#526#527#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -883,9 +846,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="18" column="32" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -916,20 +876,10 @@
     <entry file="file://$PROJECT_DIR$/LICENSE">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="36" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/heaven/clr/ClrExeMain.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -937,33 +887,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="38" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/heavenchess/ChessOptionsTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="49" column="63" lean-forward="true" selection-start-line="49" selection-start-column="63" selection-end-line="49" selection-end-column="63" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/heavenchess/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
-          <caret line="12" column="9" lean-forward="true" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/heavenchess/movement/Point.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -971,14 +901,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" selection-start-line="8" selection-end-line="8" />
-          <folding>
-            <element signature="e#200#201#0" expanded="true" />
-            <element signature="e#230#231#0" expanded="true" />
-            <element signature="e#265#266#0" expanded="true" />
-            <element signature="e#296#297#0" expanded="true" />
-            <element signature="e#429#430#0" expanded="true" />
-            <element signature="e#459#460#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -996,30 +918,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/heavenchess/board/Chessboard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="46" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/heavenchess/movement/ChessboardValidator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="78" selection-start-line="2" selection-start-column="78" selection-end-line="2" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/heavenchess/movement/Move.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/heavenchess/movement/MoveProvider.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -1027,5 +925,181 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="21" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/heavenchess/ChessOptionsTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="6" column="47" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/heavenchess/movement/Move.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="13" column="16" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
+          <folding>
+            <element signature="e#180#181#0" expanded="true" />
+            <element signature="e#208#209#0" expanded="true" />
+            <element signature="e#237#238#0" expanded="true" />
+            <element signature="e#263#264#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/heavenchess/movement/ChessboardValidator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="8" column="89" selection-start-line="8" selection-start-column="60" selection-end-line="8" selection-end-column="89" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/heavenchess/board/Chessboard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/heavenchess/movement/Point.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="e#576#577#0" expanded="true" />
+            <element signature="e#600#601#0" expanded="true" />
+            <element signature="e#625#626#0" expanded="true" />
+            <element signature="e#649#650#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/junit/framework/TestCase.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="102" selection-start-line="102" selection-end-line="102" />
+          <folding>
+            <element signature="e#2608#2609#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/heavenchess/board/BasicChessboard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="82" selection-start-line="82" selection-end-line="82" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/heavenchess/movement/BasicModeValidator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="66" column="65" selection-start-line="66" selection-start-column="65" selection-end-line="66" selection-end-column="65" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/heavenchess/board/BasicChessboardTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="65" column="43" selection-start-line="65" selection-start-column="43" selection-end-line="65" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>FiveHorseGame</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: com.google.code.findbugs:jsr305:3.0.2</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
