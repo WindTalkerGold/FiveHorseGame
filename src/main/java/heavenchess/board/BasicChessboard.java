@@ -125,4 +125,20 @@ public class BasicChessboard implements Chessboard {
         // todo: flip chessman if any
         return true;
     }
+
+    @Override
+    public Iterable<Point> getNearbyCounterparts(Point point) {
+        if(!getSlotState(point).hasChessman()) {
+            throw new IllegalArgumentException("The point has not chessman on it!");
+        }
+
+        ChessboardState reversed = getSlotState(point).getFlip();
+        Iterable<Point> counterChessman = getSlotsOfState(reversed);
+        boolean checkDiagonal = (point.getX()+point.getY()) % 2 == 0;
+        if(checkDiagonal) {
+            return Iterables.filter(counterChessman, p->p.projectionDistance(point)==1);
+        } else {
+            return Iterables.filter(counterChessman, p->p.blockDistance(point) == 1);
+        }
+    }
 }

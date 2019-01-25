@@ -13,4 +13,5 @@ public interface Chessboard {
     boolean move(Move move, ChessboardState moveFor);
     boolean flip(Point point);
     boolean set(Point point, ChessboardState state);
+    Iterable<Point> getNearbyCounterparts(Point point);
 }

@@ -6,6 +6,9 @@ import heavenchess.movement.Point;
 import junit.framework.TestCase;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.Comparator;
+
 public class BasicChessboardTest extends TestCase {
     @Test
     public void testInitChessboard() {
@@ -70,6 +73,40 @@ public class BasicChessboardTest extends TestCase {
         assertEquals(ChessboardState.LeftOn, chessboard.getSlotState(new Point(2, 3)));
         assertEquals(ChessboardState.Empty, chessboard.getSlotState(new Point(4, 4)));
         assertEquals(ChessboardState.RightOn, chessboard.getSlotState(new Point(0, 0)));
+    }
+
+    @Test
+    public void testGetNearbyNoDiagonal() {
+        BasicChessboard chessboard = new BasicChessboard();
+        Point targetPoint = new Point(0, 1);
+        chessboard.set(targetPoint, ChessboardState.RightOn);
+
+        ArrayList<Point> result = new ArrayList<>();
+        for(Point p : chessboard.getNearbyCounterparts(targetPoint)) {
+            result.add(p);
+        }
+        assertEquals(1, result.size());
+        assertEquals(new Point(0, 0), result.get(0));
+    }
+
+    @Test
+    public void testGetNearbyDiagonal() {
+        BasicChessboard chessboard = new BasicChessboard();
+        Point targetPoint = new Point(1, 1);
+        chessboard.set(targetPoint, ChessboardState.RightOn);
+
+        ArrayList<Point> result = new ArrayList<>();
+        for(Point p : chessboard.getNearbyCounterparts(targetPoint)) {
+            result.add(p);
+        }
+        assertEquals(3, result.size());
+        result.sort((o1, o2) ->{
+                int dx = o1.getX() - o2.getX();
+                return dx != 0 ? dx : (o1.getY() - o2.getY());
+        });
+        assertEquals(new Point(0, 0), result.get(0));
+        assertEquals(new Point(1, 0), result.get(1));
+        assertEquals(new Point(2, 0), result.get(2));
     }
 
     private void validateChessboard(BasicChessboard chessboard, int i2, int i3) {
