@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f22c7f37-e546-4a0c-b525-b78778af90d4" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/heavenchess/movement/ClampChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/heavenchess/board/BasicChessboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/heavenchess/board/BasicChessboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/heavenchess/board/Chessboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/heavenchess/board/Chessboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/heavenchess/movement/FlickChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/heavenchess/movement/FlickChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/heavenchess/board/BasicChessboardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/heavenchess/board/BasicChessboardTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/heavenchess/movement/FlickCheckerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/heavenchess/movement/FlickClampCheckerTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -54,11 +48,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BasicChessboard.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BasicChessboard.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/heavenchess/board/BasicChessboard.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="134" column="8" selection-start-line="134" selection-start-column="8" selection-end-line="134" selection-end-column="65" />
+            <state relative-caret-position="381">
+              <caret line="139" column="16" lean-forward="true" selection-start-line="139" selection-start-column="16" selection-end-line="139" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -66,11 +60,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FlickClampCheckerTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="FlickClampCheckerTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/heavenchess/movement/FlickClampCheckerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
-              <caret line="58" column="65" lean-forward="true" selection-start-line="58" selection-start-column="65" selection-end-line="58" selection-end-column="65" />
+            <state relative-caret-position="891">
+              <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -184,12 +178,12 @@
         <option value="$PROJECT_DIR$/src/test/java/heavenchess/movement/PointTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/heavenchess/movement/Point.java" />
         <option value="$PROJECT_DIR$/src/test/java/heavenchess/movement/FlickCheckerTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/heavenchess/board/BasicChessboard.java" />
         <option value="$PROJECT_DIR$/src/main/java/heavenchess/board/Chessboard.java" />
         <option value="$PROJECT_DIR$/src/main/java/heavenchess/movement/FlickChecker.java" />
         <option value="$PROJECT_DIR$/src/test/java/heavenchess/board/BasicChessboardTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/heavenchess/movement/ClampChecker.java" />
         <option value="$PROJECT_DIR$/src/test/java/heavenchess/movement/FlickClampCheckerTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/heavenchess/board/BasicChessboard.java" />
       </list>
     </option>
   </component>
@@ -575,14 +569,11 @@
       <workItem from="1548075858100" duration="8511000" />
       <workItem from="1548158024462" duration="2021000" />
       <workItem from="1548335435715" duration="599000" />
-      <workItem from="1548420082378" duration="1926000" />
+      <workItem from="1548420082378" duration="2534000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="BasicChessboardTest_testGetNearbyNoDiagonal - 2019.01.25 at 20h 59m 35s.xml">
-      <configuration name="BasicChessboardTest.testGetNearbyNoDiagonal" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="BasicChessboardTest_testGetNearbyDiagonal - 2019.01.25 at 21h 03m 24s.xml">
       <configuration name="BasicChessboardTest.testGetNearbyDiagonal" configurationId="JUnit" />
     </history-entry>
@@ -610,9 +601,12 @@
     <history-entry file="FlickClampCheckerTest - 2019.01.25 at 21h 13m 19s.xml">
       <configuration name="FlickClampCheckerTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="FlickClampCheckerTest - 2019.01.25 at 21h 13m 37s.xml">
+      <configuration name="FlickClampCheckerTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40414000" />
+    <option name="totallyTimeSpent" value="41022000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -637,11 +631,11 @@
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3293348" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.34460196" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.34460196" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.3293348" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2739872" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2739872" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -901,16 +895,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/heavenchess/board/BasicChessboard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="134" column="8" selection-start-line="134" selection-start-column="8" selection-end-line="134" selection-end-column="65" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/heavenchess/movement/FlickChecker.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -967,8 +951,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/heavenchess/movement/FlickClampCheckerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="58" column="65" lean-forward="true" selection-start-line="58" selection-start-column="65" selection-end-line="58" selection-end-column="65" />
+        <state relative-caret-position="891">
+          <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/heavenchess/board/BasicChessboard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="381">
+          <caret line="139" column="16" lean-forward="true" selection-start-line="139" selection-start-column="16" selection-end-line="139" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

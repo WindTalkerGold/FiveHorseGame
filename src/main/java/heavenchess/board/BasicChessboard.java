@@ -137,8 +137,7 @@ public class BasicChessboard implements Chessboard {
         boolean checkDiagonal = (point.getX()+point.getY()) % 2 == 0;
         if(checkDiagonal) {
             return Iterables.filter(counterChessman, p->p.projectionDistance(point)==1);
-        }
-        else {
+        } else {
             return Iterables.filter(counterChessman, p->p.blockDistance(point) == 1);
         }
     }
