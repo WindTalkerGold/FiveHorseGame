@@ -9,9 +9,12 @@ Chessmen sit on each focus point of the vertical boundaries. Each time it can go
 Chessmen will be flipped if one is clamped by two other, or two is ~~
 
 Will implement it in three steps:
-1) enable the chessboard. Each player will be assumed as human
-2) enable AI on normal mode
-3) enable the advanced mode with 2*2 additional zone, and AI on it
+1) Enable the chessboard. Each player will be assumed as human
+   Input and output will be based on console. This step is to make sure the movement and flick/clamp logic is correct,
+   before we start to implement the fancy UI and AI.
+2) Enable UI and AIv1, where we only consider for one step
+3) Improve AI
+4) Enable the advanced mode with 2*2 additional zone, and AI on it
 
 All code will be in package heavenchess, with tests.
 

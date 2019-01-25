@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f22c7f37-e546-4a0c-b525-b78778af90d4" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/heavenchess/board/BasicChessboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/heavenchess/board/BasicChessboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/README.txt" beforeDir="false" afterPath="$PROJECT_DIR$/docs/README.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -27,15 +27,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BasicModeValidator.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/heavenchess/movement/BasicModeValidator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="BasicChessboardTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/heavenchess/board/BasicChessboardTest.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -48,7 +39,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BasicChessboard.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BasicChessboard.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/heavenchess/board/BasicChessboard.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="381">
@@ -56,6 +47,15 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/docs/README.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" column="66" lean-forward="true" selection-start-line="16" selection-start-column="66" selection-end-line="16" selection-end-column="66" />
             </state>
           </provider>
         </entry>
@@ -169,7 +169,6 @@
         <option value="$PROJECT_DIR$/src/test/java/heavenchess/ChessOptionsTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/heavenchess/movement/MoveProvider.java" />
         <option value="$PROJECT_DIR$/src/main/java/heavenchess/ChessOptions.java" />
-        <option value="$PROJECT_DIR$/docs/README.txt" />
         <option value="$PROJECT_DIR$/src/main/java/heavenchess/movement/Move.java" />
         <option value="$PROJECT_DIR$/src/main/java/heavenchess/movement/ChessboardValidator.java" />
         <option value="$PROJECT_DIR$/src/main/java/heavenchess/movement/BasicModeValidator.java" />
@@ -184,6 +183,7 @@
         <option value="$PROJECT_DIR$/src/main/java/heavenchess/movement/ClampChecker.java" />
         <option value="$PROJECT_DIR$/src/test/java/heavenchess/movement/FlickClampCheckerTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/heavenchess/board/BasicChessboard.java" />
+        <option value="$PROJECT_DIR$/docs/README.txt" />
       </list>
     </option>
   </component>
@@ -239,6 +239,11 @@
               <item name="FiveHorseGame" type="b2602c69:ProjectViewProjectNode" />
               <item name="FiveHorseGame" type="462c0819:PsiDirectoryNode" />
               <item name="docs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="FiveHorseGame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FiveHorseGame" type="462c0819:PsiDirectoryNode" />
+              <item name="practises" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="FiveHorseGame" type="b2602c69:ProjectViewProjectNode" />
@@ -374,7 +379,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.FlickClampCheckerTest.testFlickDiagonal">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
@@ -569,7 +574,7 @@
       <workItem from="1548075858100" duration="8511000" />
       <workItem from="1548158024462" duration="2021000" />
       <workItem from="1548335435715" duration="599000" />
-      <workItem from="1548420082378" duration="2534000" />
+      <workItem from="1548420082378" duration="3096000" />
     </task>
     <servers />
   </component>
@@ -606,7 +611,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41022000" />
+    <option name="totallyTimeSpent" value="41584000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -800,13 +805,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docs/README.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="103" selection-start-line="18" selection-start-column="103" selection-end-line="18" selection-end-column="103" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/heavenchess/movement/MoveProvider.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -966,6 +964,13 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/README.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="66" lean-forward="true" selection-start-line="16" selection-start-column="66" selection-end-line="16" selection-end-column="66" />
         </state>
       </provider>
     </entry>
