@@ -4,13 +4,14 @@ import com.google.common.collect.Iterables;
 import heavenchess.board.Chessboard;
 import heavenchess.board.ChessboardState;
 
-public class FlickChecker {
-
-    public Iterable<Point> getFlickedPoints(Chessboard chessboard, Point point) {
+public class ClampChecker {
+    public Iterable<Point> getClampedPoints(Chessboard chessboard, Point point) {
         Iterable<Point> nearbys = chessboard.getNearbyCounterparts(point);
-        ChessboardState reversed = chessboard.getSlotState(point).getFlip();
+        ChessboardState state = chessboard.getSlotState(point);
         // Invalid will be returned for out of bound
         return Iterables.filter(nearbys, p->
-             chessboard.getSlotState(p.createWithPivot(point)) == reversed);
+                chessboard.getSlotState(point.createWithPivot(p)) == state);
+
+
     }
 }
