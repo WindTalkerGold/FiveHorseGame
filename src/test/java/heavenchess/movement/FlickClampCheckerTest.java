@@ -10,8 +10,8 @@ public class FlickClampCheckerTest extends TestCase {
     @Test
     public void testNoFlick() {
         BasicChessboard chessboard = new BasicChessboard();
-        FlickChecker checker = new FlickChecker();
-        assertEquals(0, Iterables.size(checker.getFlickedPoints(chessboard, new Point(0, 0))));
+        FlickChecker checker = new FlickChecker(chessboard);
+        assertEquals(0, Iterables.size(checker.getFlickedPoints(new Point(0, 0))));
     }
 
     @Test
@@ -21,12 +21,12 @@ public class FlickClampCheckerTest extends TestCase {
         chessboard.set(new Point(2, 2), ChessboardState.LeftOn);
         Point pt1 = new Point(0, 1);
         chessboard.set(pt1, ChessboardState.RightOn);
-        FlickChecker checker1 = new FlickChecker();
-        assertEquals(2, Iterables.size(checker1.getFlickedPoints(chessboard, pt1)));
+        FlickChecker checker1 = new FlickChecker(chessboard);
+        assertEquals(2, Iterables.size(checker1.getFlickedPoints(pt1)));
 
         Point pt2 = new Point(1, 2);
         chessboard.set(pt2, ChessboardState.RightOn);
-        assertEquals(2, Iterables.size(checker1.getFlickedPoints(chessboard, pt2)));
+        assertEquals(2, Iterables.size(checker1.getFlickedPoints(pt2)));
     }
 
     @Test
@@ -36,8 +36,8 @@ public class FlickClampCheckerTest extends TestCase {
         chessboard.set(new Point(2, 2), ChessboardState.LeftOn);
         Point pt1 = new Point(1, 1);
         chessboard.set(pt1, ChessboardState.RightOn);
-        FlickChecker checker1 = new FlickChecker();
-        assertEquals(4, Iterables.size(checker1.getFlickedPoints(chessboard, pt1)));
+        FlickChecker checker1 = new FlickChecker(chessboard);
+        assertEquals(4, Iterables.size(checker1.getFlickedPoints(pt1)));
     }
 
     @Test
@@ -48,8 +48,8 @@ public class FlickClampCheckerTest extends TestCase {
         Point pt1 = new Point(1, 2);
         chessboard.set(pt1, ChessboardState.LeftOn);
 
-        ClampChecker checker1 = new ClampChecker();
-        assertEquals(1, Iterables.size(checker1.getClampedPoints(chessboard, pt1)));
+        ClampChecker checker1 = new ClampChecker(chessboard);
+        assertEquals(1, Iterables.size(checker1.getClampedPoints(pt1)));
     }
 
     @Test
@@ -59,8 +59,8 @@ public class FlickClampCheckerTest extends TestCase {
         chessboard.set(new Point(1, 1), ChessboardState.RightOn);
         Point pt1 = new Point(0, 2);
         chessboard.set(pt1, ChessboardState.LeftOn);
-        ClampChecker checker1 = new ClampChecker();
-        assertEquals(2, Iterables.size(checker1.getClampedPoints(chessboard, pt1)));
+        ClampChecker checker1 = new ClampChecker(chessboard);
+        assertEquals(2, Iterables.size(checker1.getClampedPoints(pt1)));
     }
 
 }

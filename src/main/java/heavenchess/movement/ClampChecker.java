@@ -5,7 +5,13 @@ import heavenchess.board.Chessboard;
 import heavenchess.board.ChessboardState;
 
 public class ClampChecker {
-    public Iterable<Point> getClampedPoints(Chessboard chessboard, Point point) {
+    private final Chessboard chessboard;
+
+    public ClampChecker(Chessboard chessboard) {
+        this.chessboard = chessboard;
+    }
+
+    public Iterable<Point> getClampedPoints(Point point) {
         Iterable<Point> nearbys = chessboard.getNearbyCounterparts(point);
         ChessboardState state = chessboard.getSlotState(point);
         // Invalid will be returned for out of bound

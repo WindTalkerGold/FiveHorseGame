@@ -18,6 +18,9 @@
 *.zip
 *.tar.gz
 *.rar
+.classpath
+.project
+.settings/
 
 #workspace.xml, usage.statistics.xml, and tasks.xml
 */.idea/workspace.xml
