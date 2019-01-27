@@ -10,7 +10,7 @@ public class ConsoleMovementProvider implements MoveProvider {
     public Move next() {
         String line = System.console().readLine();
         String[] split = line.split(" ");
-        if(line.length() != 4) {
+        if(split.length != 4) {
             System.err.println("Error num of params");
             return null;
         }
