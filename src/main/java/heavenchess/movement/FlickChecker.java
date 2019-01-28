@@ -5,8 +5,13 @@ import heavenchess.board.Chessboard;
 import heavenchess.board.ChessboardState;
 
 public class FlickChecker {
+    private final Chessboard chessboard;
 
-    public Iterable<Point> getFlickedPoints(Chessboard chessboard, Point point) {
+    public FlickChecker(Chessboard chessboard) {
+        this.chessboard = chessboard;
+    }
+
+    public Iterable<Point> getFlickedPoints(Point point) {
         Iterable<Point> nearbys = chessboard.getNearbyCounterparts(point);
         ChessboardState reversed = chessboard.getSlotState(point).getFlip();
         // Invalid will be returned for out of bound

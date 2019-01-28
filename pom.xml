@@ -13,6 +13,7 @@
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <version>27.0.1-jre</version>
+            
         </dependency>
         <dependency>
             <groupId>junit</groupId>
@@ -36,7 +37,41 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <mainClass>heavenchess.Main</mainClass>
+                            <classpathPrefix>dependency/</classpathPrefix>
+                            <!--classpathLayoutType>repository</classpathLayoutType-->
+                        </manifest>
+                        
+                    </archive>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-dependency-plugin</artifactId>
+                    <executions>
+                        <execution>
+                            <phase>process-sources</phase>
+
+                            <goals>
+                                <goal>copy-dependencies</goal>
+                            </goals>
+
+                            <configuration>
+                                <outputDirectory>${targetdirectory}</outputDirectory>
+                            </configuration>
+                        </execution>
+                    </executions>
+            </plugin>
         </plugins>
+
+        
     </build>
     <!--plugins>
 
