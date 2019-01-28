@@ -19,8 +19,8 @@ public class FlickClampManager {
         if(!side.hasChessman()) {
             throw new IllegalArgumentException("side must be either leftOn or rightOn");
         }
+
         int totalChanged = 0;
-        
         while(true) {
             boolean hasAnyChessmanChanged = false;
             Iterable<Point> flippedByFlick = runFlickCheck(side);
@@ -42,7 +42,6 @@ public class FlickClampManager {
         }
 
         return totalChanged;
-
     }
 
     private Iterable<Point> runFlickCheck(ChessboardState side) {

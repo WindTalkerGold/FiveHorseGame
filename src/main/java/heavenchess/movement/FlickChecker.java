@@ -12,7 +12,7 @@ public class FlickChecker {
     }
 
     public Iterable<Point> getFlickedPoints(Point point) {
-        Iterable<Point> nearbys = chessboard.getNearbyCounterparts(point);
+        Iterable<Point> nearbys = chessboard.getAdjacentCounterparts(point);
         ChessboardState reversed = chessboard.getSlotState(point).getFlip();
         // Invalid will be returned for out of bound
         return Iterables.filter(nearbys, p->

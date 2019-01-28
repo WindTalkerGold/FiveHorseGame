@@ -6,6 +6,7 @@ import heavenchess.movement.Move;
 import heavenchess.movement.Point;
 
 import java.util.ArrayList;
+
 import com.google.common.collect.Iterables;
 
 public class BasicChessboard implements Chessboard {
@@ -38,11 +39,7 @@ public class BasicChessboard implements Chessboard {
 
     @Override
     public int countSlotsOfState(ChessboardState state) {
-        int count = 0;
-        for (Point p:getSlotsOfState(state)) {
-            count++;
-        }
-        return count;
+        return pointsOfState.get(state.ordinal()).size();
     }
 
     @Override
@@ -84,7 +81,6 @@ public class BasicChessboard implements Chessboard {
         if(!originalState.hasChessman()) {
             return false;
         }
-
         ChessboardState newState = originalState.getFlip();
         chessboard[point.getX()][point.getY()] = newState;
         pointsOfState.get(originalState.ordinal()).remove(point);
@@ -95,8 +91,9 @@ public class BasicChessboard implements Chessboard {
     @Override
     public boolean set(Point point, ChessboardState state) {
         ChessboardState originalState = getSlotState(point);
-        if(originalState == ChessboardState.Invalid || originalState == state)
+        if(originalState == ChessboardState.Invalid || originalState == state) {
             return false;
+        }
         chessboard[point.getX()][point.getY()] = state;
         pointsOfState.get(state.ordinal()).add(point);
         pointsOfState.get(originalState.ordinal()).remove(point);
@@ -121,13 +118,11 @@ public class BasicChessboard implements Chessboard {
         pointsOfState.get(originalEndState.ordinal()).add(start);
         pointsOfState.get(originalStartState.ordinal()).remove(start);
         pointsOfState.get(originalStartState.ordinal()).add(end);
-
-        // todo: flip chessman if any
         return true;
     }
 
     @Override
-    public Iterable<Point> getNearbyCounterparts(Point point) {
+    public Iterable<Point> getAdjacentCounterparts(Point point) {
         if(!getSlotState(point).hasChessman()) {
             throw new IllegalArgumentException("The point has not chessman on it!");
         }

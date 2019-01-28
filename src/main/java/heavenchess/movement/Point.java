@@ -22,7 +22,6 @@ public class Point {
             Point p = (Point)another;
             return p.x == this.x && p.y == this.y;
         }
-
         return false;
     }
 
@@ -37,7 +36,8 @@ public class Point {
         int dy = Math.abs(y-another.getY());
         return Math.max(dx, dy);
     }
-
+    
+    // pivot is mid of this & return
     public Point createWithPivot(Point pivot) {
         int x = 2*pivot.getX()-this.x;
         int y = 2*pivot.getY()-this.y;

@@ -81,7 +81,7 @@ public class BasicChessboardTest extends TestCase {
         chessboard.set(targetPoint, ChessboardState.RightOn);
 
         ArrayList<Point> result = new ArrayList<>();
-        for(Point p : chessboard.getNearbyCounterparts(targetPoint)) {
+        for(Point p : chessboard.getAdjacentCounterparts(targetPoint)) {
             result.add(p);
         }
         assertEquals(1, result.size());
@@ -95,7 +95,7 @@ public class BasicChessboardTest extends TestCase {
         chessboard.set(targetPoint, ChessboardState.RightOn);
 
         ArrayList<Point> result = new ArrayList<>();
-        for(Point p : chessboard.getNearbyCounterparts(targetPoint)) {
+        for(Point p : chessboard.getAdjacentCounterparts(targetPoint)) {
             result.add(p);
         }
         assertEquals(3, result.size());

@@ -1,33 +1,34 @@
 package heavenchess.movement;
 
-import com.google.common.collect.Iterators;
 import heavenchess.board.Chessboard;
 import heavenchess.board.ChessboardState;
 
 import java.util.Arrays;
 import java.util.Iterator;
 
-public class BasicModeValidator implements ChessboardValidator {
+import com.google.common.collect.Iterators;
 
+public class BasicModeValidator implements ChessboardValidator {
     @Override
     public boolean isMovementValid(Move move, Chessboard chessboard, ChessboardState validateFor) {
-        if(validateFor != ChessboardState.LeftOn && validateFor != ChessboardState.RightOn) {
+        if(!validateFor.hasChessman()) {
             throw new IllegalArgumentException("Must validator for either LeftOn or RightOn!");
         }
 
-        // 1) start != end, and both valid position (todo)
+        // 1) start != end
         if(move.start.equals(move.end)) {
             return false;
         }
-
+        
         // 2) start must be validatorFor, end must be empty
+        //    if start or end is not in range, InValid will be returned
         if(chessboard.getSlotState(move.start) != validateFor ||
            chessboard.getSlotState(move.end) != ChessboardState.Empty) {
             return false;
         }
 
         // 3) start and end must be in a same line
-        Iterator<Point> innerPoints = getInnerPoints(move.start, move.end);
+        Iterator<Point> innerPoints = getPointsOnTheWay(move.start, move.end);
         if(innerPoints == null) {
             return false;
         }
@@ -44,7 +45,7 @@ public class BasicModeValidator implements ChessboardValidator {
     private Integer[] generator = new Integer[] {1,2,3,4};
 
     // assume start != end
-    private Iterator<Point> getInnerPoints(Point start, Point end) {
+    private Iterator<Point> getPointsOnTheWay(Point start, Point end) {
         int sx = start.getX();
         int sy = start.getY();
         int ex = end.getX();

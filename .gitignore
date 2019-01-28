@@ -21,6 +21,7 @@
 .classpath
 .project
 .settings/
+.vscode/
 
 #workspace.xml, usage.statistics.xml, and tasks.xml
 */.idea/workspace.xml
