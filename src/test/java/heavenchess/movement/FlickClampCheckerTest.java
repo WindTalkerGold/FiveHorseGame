@@ -2,6 +2,7 @@ package heavenchess.movement;
 
 import com.google.common.collect.Iterables;
 import heavenchess.board.BasicChessboard;
+import heavenchess.board.Chessboard;
 import heavenchess.board.ChessboardState;
 import junit.framework.TestCase;
 import org.junit.Test;
@@ -61,6 +62,32 @@ public class FlickClampCheckerTest extends TestCase {
         chessboard.set(pt1, ChessboardState.LeftOn);
         ClampChecker checker1 = new ClampChecker(chessboard);
         assertEquals(2, Iterables.size(checker1.getClampedPoints(pt1)));
+    }
+
+    @Test
+    public void testCombined() {
+        Chessboard chessboard = new BasicChessboard();
+        FlickClampManager manager = new FlickClampManager(chessboard);
+        Move move1 = new Move(new Point(0, 0), new Point(2,2));
+        chessboard.move(move1, ChessboardState.LeftOn);
+        assertEquals(0, manager.runFlip(ChessboardState.LeftOn));
+    
+        Move move2 = new Move(new Point(3, 4), new Point(3,1));
+        chessboard.move(move2, ChessboardState.RightOn);
+        assertEquals(2, manager.runFlip(ChessboardState.RightOn));
+        assertEquals(7, chessboard.countSlotsOfState(ChessboardState.RightOn));
+        assertEquals(3, chessboard.countSlotsOfState(ChessboardState.LeftOn));
+    
+        Move move3 = new Move(new Point(1, 0), new Point(0,0));
+        chessboard.move(move3, ChessboardState.LeftOn);
+        assertEquals(0, manager.runFlip(ChessboardState.LeftOn));
+    
+        Move move4 = new Move(new Point(1, 4), new Point(1, 0));
+        chessboard.move(move4, ChessboardState.RightOn);
+        assertEquals(3, manager.runFlip(ChessboardState.RightOn));
+        assertEquals(10, chessboard.countSlotsOfState(ChessboardState.RightOn));
+        assertEquals(0, chessboard.countSlotsOfState(ChessboardState.LeftOn));
+
     }
 
 }
