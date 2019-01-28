@@ -12,12 +12,10 @@ public class ClampChecker {
     }
 
     public Iterable<Point> getClampedPoints(Point point) {
-        Iterable<Point> nearbys = chessboard.getNearbyCounterparts(point);
+        Iterable<Point> nearbys = chessboard.getAdjacentCounterparts(point);
         ChessboardState state = chessboard.getSlotState(point);
         // Invalid will be returned for out of bound
         return Iterables.filter(nearbys, p->
                 chessboard.getSlotState(point.createWithPivot(p)) == state);
-
-
     }
 }
