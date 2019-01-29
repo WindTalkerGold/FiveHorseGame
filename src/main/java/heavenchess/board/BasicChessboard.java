@@ -37,6 +37,27 @@ public class BasicChessboard implements Chessboard {
         }
     }
 
+    public BasicChessboard(ChessboardState[][] chessboard) {
+        if(chessboard.length != ChessboardHeight) {
+            throw new IllegalArgumentException("must have "+ChessboardHeight+" rows");
+        }
+        for(int i=0;i<4;i++) {
+            pointsOfState.add(new ArrayList<>());
+        }
+        for(int r=0;r<chessboard.length;r++) {
+            if(chessboard[r].length != ChessboardWidth) {
+                throw new IllegalArgumentException("each row must have "+ChessboardWidth+" columns");
+            }
+            for(int c=0;c<ChessboardWidth;c++) {
+                ChessboardState state = chessboard[r][c];
+                this.chessboard[r][c] = state;
+                if(state.hasChessman()) {
+                    this.pointsOfState.get(state.ordinal()).add(new Point(r, c));
+                }
+            }
+        }
+    }
+
     @Override
     public int countSlotsOfState(ChessboardState state) {
         return pointsOfState.get(state.ordinal()).size();

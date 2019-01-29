@@ -52,6 +52,11 @@ public class Point {
         return y;
     }
 
+    @Override
+    public String toString() {
+        return "("+x+","+y+")";
+    }
+
     private final int x;
     private final int y;
 }
