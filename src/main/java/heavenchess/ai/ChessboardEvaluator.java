@@ -15,60 +15,43 @@ import heavenchess.movement.Point;
 public class ChessboardEvaluator {
     // return all possible points where side.flip() can go to attack side
     // attack means both clamp and flick
-    public Iterable<Move> isAttackable(ChessboardState side, Chessboard chessboard) {
+    public ArrayList<Move> getAllAttackableTargets(ChessboardState side, Chessboard chessboard) {
         Stopwatch stopwatch = Stopwatch.createStarted();
-        ChessboardValidator validator = chessboard.getValidator();
-        
         ArrayList<Move> targets = new ArrayList<>();
-        HashSet<Point> checkedTargets = new HashSet<>();
-        // is clampable
-        for(Point pointOfThisSide : chessboard.getSlotsOfState(side)) {
-            for(Point pointOfOtherSide : chessboard.getSlotsOfState(side.getFlip())) {
-                if(pointOfOtherSide.projectionDistance(pointOfThisSide) != 1) {
-                    continue;
-                }
-                Point targetPointToMove = pointOfOtherSide.createWithPivot(pointOfThisSide);
-                if(chessboard.getSlotState(targetPointToMove) != ChessboardState.Empty) {
-                    continue;
-                }
-                if(checkedTargets.contains(targetPointToMove)) {
-                    continue;
-                }
-                checkedTargets.add(targetPointToMove);
-                for(Point pointOnTheOtherSide : chessboard.getSlotsOfState(side.getFlip())) {
-                    Move candidateMove = new Move(pointOnTheOtherSide, targetPointToMove);
-                    if(validator.isMovementValid(candidateMove, chessboard, side.getFlip())) {
-                        targets.add(candidateMove);
-                    }
-                }
-            }
-        }
-
-        checkedTargets.clear();
-        // is flickable
-        for(Point pointOfThisSide : chessboard.getSlotsOfState(side)) {
-            for(Point pointOfThisSide2 : chessboard.getSlotsOfState(side)) {
-                if(pointOfThisSide.getLineDistance(pointOfThisSide2) != 2) {
-                    continue;
-                }
-                Point targetPointToMove = pointOfThisSide.middle(pointOfThisSide2);
-                if(chessboard.getSlotState(targetPointToMove) != ChessboardState.Empty) {
-                    continue;
-                }
-                if(checkedTargets.contains(targetPointToMove)) {
-                    continue;
-                }
-                checkedTargets.add(targetPointToMove);
-                for(Point pointOnTheOtherSide : chessboard.getSlotsOfState(side.getFlip())) {
-                    Move candidateMove = new Move(pointOnTheOtherSide, targetPointToMove);
-                    if(validator.isMovementValid(candidateMove, chessboard, side.getFlip())) {
-                        targets.add(candidateMove);
-                    }
-                }
-            }
-        }
+        
+        run(targets, chessboard, side, cb->cb.getSlotsOfState(side.getFlip()), 
+            (p1, p2)->p2.createWithPivot(p1), (p1, p2)->p1.projectionDistance(p2) == 1);
+        run(targets, chessboard, side, cb->cb.getSlotsOfState(side), 
+            (p1, p2)->p2.middle(p1), (p1, p2)->p1.getLineDistance(p2) == 2);
         stopwatch.stop();
         //System.out.println(stopwatch.elapsed(TimeUnit.MICROSECONDS));
         return targets;
+    }
+
+    private void run(ArrayList<Move> resultHolder, Chessboard chessboard, ChessboardState state, PointIterator lister,
+            TargetPointSelector targetProvider, PointDistanceChecker distanceChecker) {
+        ChessboardValidator validator = chessboard.getValidator();
+        HashSet<Point> checkedTargets = new HashSet<>();
+        for (Point pointOfThisSide : chessboard.getSlotsOfState(state)) {
+            for (Point pointOfOtherSide : lister.apply(chessboard)) {
+                if (!distanceChecker.apply(pointOfThisSide, pointOfOtherSide)) {
+                    continue;
+                }
+                Point targetPointToMove = targetProvider.apply(pointOfThisSide, pointOfOtherSide);
+                if (chessboard.getSlotState(targetPointToMove) != ChessboardState.Empty) {
+                    continue;
+                }
+                if (checkedTargets.contains(targetPointToMove)) {
+                    continue;
+                }
+                checkedTargets.add(targetPointToMove);
+                for (Point pointOnTheOtherSide : chessboard.getSlotsOfState(state.getFlip())) {
+                    Move candidateMove = new Move(pointOnTheOtherSide, targetPointToMove);
+                    if (validator.isMovementValid(candidateMove, chessboard, state.getFlip())) {
+                        resultHolder.add(candidateMove);
+                    }
+                }
+            }
+        }
     }
 }
