@@ -21,24 +21,10 @@ public class MoveEnumerator {
         }
 
         Iterable<Point> allEmptyPoints = chessboard.getSlotsOfState(ChessboardState.Empty);
-        Iterable<Point> allCandidates = Iterables.filter(allEmptyPoints, p->sameLine(p, point));
+        Iterable<Point> allCandidates = Iterables.filter(allEmptyPoints, p->p.sameLine(point));
         Iterable<Move> candidateMove = Iterables.transform(allCandidates, p->new Move(point, p));
         return Iterables.filter(candidateMove, m->validator.isMovementValid(m, chessboard, state));
     }
 
-    private boolean sameLine(Point p1, Point p2) {
-        //System.out.println(p1.toString()+"=>"+p2.toString());
-        if(p1.getX() == p2.getX() || p1.getY() == p2.getY()) {
-            //System.out.println("1, true");
-            return true;
-        }
-
-        if((p1.getX()+p1.getY()) % 2 != 0) {
-            //System.out.println("2, false");
-            return false;
-        }
-        boolean onDiaganal = Math.abs(p1.getX()-p2.getX()) == Math.abs(p1.getY()-p2.getY());
-        //System.out.println("3, "+onDiaganal);
-        return onDiaganal;
-    }
+    
 }

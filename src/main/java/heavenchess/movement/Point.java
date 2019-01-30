@@ -57,6 +57,37 @@ public class Point {
         return "("+x+","+y+")";
     }
 
+    public boolean sameLine(Point another) {
+        if(x == another.x || y == another.y) {
+            return true;
+        }
+
+        if((x+y) % 2 != 0) {
+            return false;
+        }
+        return Math.abs(x-another.x) == Math.abs(y-another.y);
+    }
+
+    public int getLineDistance(Point another) {
+        if(x == another.x) {
+            return Math.abs(y-another.y);
+        }
+        if(y==another.y) {
+            return Math.abs(x-another.x);
+        }
+        
+        if((x+y) % 2 != 0) {
+            return -1;
+        }
+        int dx = Math.abs(x-another.x);
+        int dy = Math.abs(y-another.y);
+        return (dx == dy) ? dx : -1;
+    }
+
+    public Point middle(Point another) {
+        return new Point((x+another.x)/2, (y+another.y)/2);
+    }
+
     private final int x;
     private final int y;
 }
