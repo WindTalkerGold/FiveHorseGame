@@ -14,6 +14,11 @@ public class Move {
         return end;
     }
 
+    @Override
+    public String toString() {
+        return start.toString()+"->"+end.toString();
+    }
+
     final Point start;
     final Point end;
 }
