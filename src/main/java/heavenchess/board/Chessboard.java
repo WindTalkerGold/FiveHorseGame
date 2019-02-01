@@ -11,6 +11,7 @@ public interface Chessboard {
     ChessboardState[][] getChessboard();
     ChessboardValidator getValidator();
     boolean move(Move move, ChessboardState moveFor);
+    Chessboard move2(Move move, ChessboardState moveFor);
     boolean flip(Point point);
     boolean set(Point point, ChessboardState state);
     Iterable<Point> getAdjacentCounterparts(Point point);

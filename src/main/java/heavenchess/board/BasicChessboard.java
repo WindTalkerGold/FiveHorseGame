@@ -143,6 +143,17 @@ public class BasicChessboard implements Chessboard {
     }
 
     @Override
+    public Chessboard move2(Move move, ChessboardState moveFor) {
+        if(!getValidator().isMovementValid(move, this, moveFor)) {
+            return null;
+        }
+
+        BasicChessboard another = new BasicChessboard(this.chessboard);
+        another.move(move, moveFor);
+        return another;
+    }
+
+    @Override
     public Iterable<Point> getAdjacentCounterparts(Point point) {
         if(!getSlotState(point).hasChessman()) {
             throw new IllegalArgumentException("The point has not chessman on it!");

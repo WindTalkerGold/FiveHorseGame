@@ -12,7 +12,12 @@ import heavenchess.movement.ChessboardValidator;
 import heavenchess.movement.Move;
 import heavenchess.movement.Point;
 
-public class ChessboardEvaluator {
+public class AttackEnumerator implements ChessboardEvalutor {
+    public int score(ChessboardState side, Chessboard chessboard) {
+        ArrayList<Move> counterAttacks = getAllAttackableTargets(side, chessboard);
+        return -counterAttacks.size();
+    }
+
     // return all possible points where side.flip() can go to attack side
     // attack means both clamp and flick
     public ArrayList<Move> getAllAttackableTargets(ChessboardState side, Chessboard chessboard) {
