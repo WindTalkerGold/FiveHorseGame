@@ -1,7 +1,8 @@
 package heavenchess;
 
 import org.apache.commons.cli.ParseException;
-
+import java.util.ArrayList;
+import heavenchess.ai.ChessboardEvaluator;
 import heavenchess.board.BasicChessboard;
 import heavenchess.board.Chessboard;
 import heavenchess.board.ChessboardState;
@@ -25,6 +26,7 @@ public class Main {
 
         Chessboard chessboard = new BasicChessboard();
         FlickClampManager chessboardManager = new FlickClampManager(chessboard);
+        ChessboardEvaluator evaluator = new ChessboardEvaluator();
         ChessboardValidator validator = new BasicModeValidator();
 
         ConsoleChessboardDrawer drawer = new ConsoleChessboardDrawer();
@@ -40,8 +42,17 @@ public class Main {
             chessboard.move(move, currentState);
             int changedNum = chessboardManager.runFlip(currentState);
             System.out.println(changedNum+" chessmen changed for "+currentState);
-            currentState = currentState.getFlip();
+            
+            ArrayList<Move> possibleAttacks = evaluator.getAllAttackableTargets(currentState, chessboard);
+            if(possibleAttacks.size() == 0) {
+                System.out.println("not attackable!");
+            } else {
+                for(Move attack : possibleAttacks) {
+                    System.out.println("    "+attack.toString());
+                }
+            }
             drawer.Draw(chessboard);
+            currentState = currentState.getFlip();
         }
         System.out.println(currentState.getFlip()+" wins!");
     }

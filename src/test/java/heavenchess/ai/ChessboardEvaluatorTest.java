@@ -19,6 +19,18 @@ public class ChessboardEvaluatorTest extends TestCase {
     }
 
     @Test
+    public void testCombined() {
+        BasicChessboard chessboard = new BasicChessboard();
+        ChessboardEvaluator evaluator = new ChessboardEvaluator();
+
+        chessboard.move(new Move(new Point(1, 0), new Point(1,1)), ChessboardState.LeftOn);
+        assertEquals(0, Iterables.size(evaluator.getAllAttackableTargets(ChessboardState.RightOn, chessboard)));
+
+        chessboard.move(new Move(new Point(4, 4), new Point(4,2)), ChessboardState.RightOn);
+        assertEquals(2, Iterables.size(evaluator.getAllAttackableTargets(ChessboardState.RightOn, chessboard)));
+    }
+
+    @Test
     public void testFlickable() {
         BasicChessboard chessboard = new BasicChessboard();
         ChessboardEvaluator evaluator = new ChessboardEvaluator();
