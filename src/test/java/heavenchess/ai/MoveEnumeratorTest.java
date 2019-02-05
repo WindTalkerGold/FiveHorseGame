@@ -15,12 +15,12 @@ public class MoveEnumeratorTest extends TestCase {
         BasicChessboard chessboard = new BasicChessboard();
         ChessboardValidator validator = chessboard.getValidator();
 
-        MoveEnumerator enumerator = new MoveEnumerator(validator);
-        assertEquals(6, Iterables.size(enumerator.allValidMoves(chessboard, new Point(0, 0))));
-        assertEquals(3, Iterables.size(enumerator.allValidMoves(chessboard, new Point(1, 0))));
-        assertEquals(7, Iterables.size(enumerator.allValidMoves(chessboard, new Point(2, 0))));
+        MoveEnumerator enumerator = new MoveEnumerator(chessboard);
+        assertEquals(6, Iterables.size(enumerator.allValidMoves(new Point(0, 0))));
+        assertEquals(3, Iterables.size(enumerator.allValidMoves(new Point(1, 0))));
+        assertEquals(7, Iterables.size(enumerator.allValidMoves(new Point(2, 0))));
         
         chessboard.set(new Point(2, 2), ChessboardState.LeftOn);
-        assertEquals(4, Iterables.size(enumerator.allValidMoves(chessboard, new Point(0, 0))));
+        assertEquals(4, Iterables.size(enumerator.allValidMoves(new Point(0, 0))));
     }
 }

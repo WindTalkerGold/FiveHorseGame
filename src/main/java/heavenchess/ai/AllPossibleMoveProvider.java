@@ -1,13 +1,12 @@
-package heavenchess.movement;
+package heavenchess.ai;
 
 import java.util.Iterator;
-import heavenchess.ai.MoveEnumerator;
+import heavenchess.movement.*;
 import heavenchess.board.Chessboard;
 import heavenchess.board.ChessboardState;
 
+// todo: add the filter to exclude attackable moves
 public class AllPossibleMoveProvider implements MoveProvider, Iterator<Move> {
-    private final Chessboard chessboard;
-    private final ChessboardState side;
     private final MoveEnumerator enumerator;
     private final Iterator<Point> pointsOfThisSide;
     private Iterator<Move> validMoveIter;
@@ -15,15 +14,13 @@ public class AllPossibleMoveProvider implements MoveProvider, Iterator<Move> {
     private Point currentPoint;
 
     public AllPossibleMoveProvider(Chessboard chessboard, ChessboardState side) {
-        this.chessboard = chessboard;
-        this.side = side;
         this.pointsOfThisSide = chessboard.getSlotsOfState(side).iterator();
-        this.enumerator = new MoveEnumerator(chessboard.getValidator());
+        this.enumerator = new MoveEnumerator(chessboard);
         this.currentPoint = null;
     }
 
     public Move next() {
-        if(nextMove == null) {
+        if (nextMove == null) {
             throw new IllegalAccessError("Must make sure hasNext() returns true before calling next()");
         }
 
@@ -33,21 +30,21 @@ public class AllPossibleMoveProvider implements MoveProvider, Iterator<Move> {
     }
 
     public boolean hasNext() {
-        if(nextMove != null)
+        if (nextMove != null)
             return true;
-        
-        while(true) {
-            if(currentPoint == null) {
-                if(pointsOfThisSide.hasNext()) {
+
+        while (true) {
+            if (currentPoint == null) {
+                if (pointsOfThisSide.hasNext()) {
                     currentPoint = pointsOfThisSide.next();
                 } else {
                     return false;
                 }
             }
-            if(validMoveIter == null) {
-                validMoveIter = enumerator.allValidMoves(chessboard, currentPoint).iterator();    
+            if (validMoveIter == null) {
+                validMoveIter = enumerator.allValidMoves(currentPoint).iterator();
             }
-            if(validMoveIter.hasNext()) {
+            if (validMoveIter.hasNext()) {
                 nextMove = validMoveIter.next();
                 return true;
             } else {
