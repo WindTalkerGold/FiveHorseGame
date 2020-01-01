@@ -1,5 +1,6 @@
 package heavenchess;
 
+import com.google.common.base.Preconditions;
 import org.apache.commons.cli.*;
 
 // assume always left side moves first, left uses to specify human move first or not
@@ -41,9 +42,8 @@ public class ChessOptions {
         chessOptions.rightBot = cmd.hasOption("r");
         chessOptions.enumNextSteps = cmd.hasOption("e");
 
-        if(chessOptions.leftBot && chessOptions.rightBot) {
-            throw new IllegalArgumentException("Cannot specify with both left and right side as bot!");
-        }
+        Preconditions.checkArgument(!chessOptions.leftBot || !chessOptions.rightBot,
+                "Cannot specify with both left and right side as bot!");
 
         return chessOptions;
     }

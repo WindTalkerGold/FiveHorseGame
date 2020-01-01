@@ -1,7 +1,17 @@
 package heavenchess.board;
 
 public enum ChessboardState {
-    Empty, LeftOn, RightOn, Invalid;
+    Empty(0), LeftOn(1), RightOn(2), Invalid(3);
+
+    private final int status;
+
+    ChessboardState(int status) {
+        this.status = status;
+    }
+
+    public int getStatus() {
+        return status;
+    }
 
     public ChessboardState getFlip() {
         if(this == RightOn)
@@ -12,6 +22,10 @@ public enum ChessboardState {
     }
 
     public boolean hasChessman() {
-        return this == RightOn || this == LeftOn;
+        return this == LeftOn || this == RightOn;
+    }
+
+    public static int getStatusCodesCount() {
+        return 4;
     }
 }

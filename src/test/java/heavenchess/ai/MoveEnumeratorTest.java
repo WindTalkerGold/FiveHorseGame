@@ -13,7 +13,6 @@ public class MoveEnumeratorTest extends TestCase {
     @Test
     public void testEnumMove1() {
         BasicChessboard chessboard = new BasicChessboard();
-        ChessboardValidator validator = chessboard.getValidator();
 
         MoveEnumerator enumerator = new MoveEnumerator(chessboard);
         assertEquals(6, Iterables.size(enumerator.allValidMoves(new Point(0, 0))));

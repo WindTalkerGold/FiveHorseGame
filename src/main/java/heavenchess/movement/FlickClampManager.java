@@ -1,10 +1,12 @@
 package heavenchess.movement;
 
 import java.util.HashSet;
+
+import com.google.common.base.Preconditions;
 import heavenchess.board.Chessboard;
 import heavenchess.board.ChessboardState;
 
-public class FlickClampManager {
+public final class FlickClampManager {
     private final Chessboard chessboard;
     private final FlickChecker flickChecker;
     private final ClampChecker clampChecker;
@@ -16,9 +18,8 @@ public class FlickClampManager {
     }
 
     public int runFlip(ChessboardState side) {
-        if(!side.hasChessman()) {
-            throw new IllegalArgumentException("side must be either leftOn or rightOn");
-        }
+        Preconditions.checkArgument(side.hasChessman(),
+                "side must be either leftOn or rightOn");
 
         int totalChanged = 0;
         while(true) {

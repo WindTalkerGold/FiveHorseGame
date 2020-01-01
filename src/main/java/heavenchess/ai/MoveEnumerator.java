@@ -1,5 +1,6 @@
 package heavenchess.ai;
 
+import com.google.common.base.Preconditions;
 import com.google.common.collect.Iterables;
 
 import heavenchess.board.Chessboard;
@@ -20,9 +21,8 @@ public class MoveEnumerator {
 
     public Iterable<Move> allValidMoves(Point point) {
         ChessboardState state = chessboard.getSlotState(point);
-        if(!state.hasChessman()) {
-            throw new IllegalArgumentException("the point must have chessman on it");
-        }
+        Preconditions.checkState(state.hasChessman(),
+                "the point must have chessman on it");
 
         Iterable<Point> allEmptyPoints = chessboard.getSlotsOfState(ChessboardState.Empty);
         Iterable<Point> allCandidates = Iterables.filter(allEmptyPoints, p->p.sameLine(point));

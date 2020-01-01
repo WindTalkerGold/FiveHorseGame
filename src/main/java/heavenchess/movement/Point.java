@@ -1,6 +1,6 @@
 package heavenchess.movement;
 
-public class Point {
+public final class Point {
     public Point(int x, int y) {
         this.x = x;
         this.y = y;
@@ -58,10 +58,12 @@ public class Point {
     }
 
     public boolean sameLine(Point another) {
+        // vertical or horizontal
         if (x == another.x || y == another.y) {
             return true;
         }
 
+        // diagonal
         if ((x + y) % 2 != 0) {
             return false;
         }
@@ -69,6 +71,7 @@ public class Point {
     }
 
     public int getLineDistance(Point another) {
+        // if not on the same line, then return -1
         if (x == another.x) {
             return Math.abs(y - another.y);
         }

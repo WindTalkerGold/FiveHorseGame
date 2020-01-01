@@ -1,6 +1,6 @@
 package heavenchess.movement;
 
-public class Move {
+public final class Move {
     public Move(Point start, Point end) {
         this.start = start;
         this.end = end;

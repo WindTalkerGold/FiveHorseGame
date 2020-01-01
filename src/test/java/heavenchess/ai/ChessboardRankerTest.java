@@ -20,9 +20,7 @@ public class ChessboardRankerTest extends TestCase {
         Chessboard chessboard = new BasicChessboard();
         FlickClampManager chessboardManager = new FlickClampManager(chessboard);
         AttackEnumerator evaluator = new AttackEnumerator();
-        ChessboardValidator validator = new BasicModeValidator();
 
-        ConsoleChessboardDrawer drawer = new ConsoleChessboardDrawer();
         ChessboardState currentState = ChessboardState.LeftOn;
         AllPossibleMoveProvider enumerator = new AllPossibleMoveProvider(chessboard, currentState);
 

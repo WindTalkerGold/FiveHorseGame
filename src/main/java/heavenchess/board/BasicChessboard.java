@@ -1,5 +1,6 @@
 package heavenchess.board;
 
+import com.google.common.base.Preconditions;
 import heavenchess.movement.BasicModeValidator;
 import heavenchess.movement.ChessboardValidator;
 import heavenchess.movement.Move;
@@ -16,7 +17,7 @@ public class BasicChessboard implements Chessboard {
     private final ArrayList<ArrayList<Point>> pointsOfState = new ArrayList<>();
 
     public BasicChessboard() {
-        for(int i=0;i<4;i++) {
+        for(int i=0;i<ChessboardState.getStatusCodesCount();i++) {
             pointsOfState.add(new ArrayList<>());
         }
 
@@ -32,27 +33,26 @@ public class BasicChessboard implements Chessboard {
                 }
                 chessboard[i][j] = state;
                 Point point = new Point(i, j);
-                pointsOfState.get(state.ordinal()).add(point);
+                pointsOfState.get(state.getStatus()).add(point);
             }
         }
     }
     
     public BasicChessboard(ChessboardState[][] chessboard) {
-        if(chessboard.length != ChessboardHeight) {
-            throw new IllegalArgumentException("must have "+ChessboardHeight+" rows");
-        }
+        Preconditions.checkArgument(chessboard.length == ChessboardHeight,
+                "must have "+ChessboardHeight+" rows");
         for(int i=0;i<4;i++) {
             pointsOfState.add(new ArrayList<>());
         }
         for(int r=0;r<chessboard.length;r++) {
-            if(chessboard[r].length != ChessboardWidth) {
-                throw new IllegalArgumentException("each row must have "+ChessboardWidth+" columns");
-            }
+            Preconditions.checkArgument(chessboard[r].length == ChessboardWidth,
+                    "each row must have "+ChessboardWidth+" columns");
+
             for(int c=0;c<ChessboardWidth;c++) {
                 ChessboardState state = chessboard[r][c];
                 this.chessboard[r][c] = state;
                 if(state.hasChessman()) {
-                    this.pointsOfState.get(state.ordinal()).add(new Point(r, c));
+                    this.pointsOfState.get(state.getStatus()).add(new Point(r, c));
                 }
             }
         }
@@ -60,12 +60,12 @@ public class BasicChessboard implements Chessboard {
 
     @Override
     public int countSlotsOfState(ChessboardState state) {
-        return pointsOfState.get(state.ordinal()).size();
+        return pointsOfState.get(state.getStatus()).size();
     }
 
     @Override
     public Iterable<Point> getSlotsOfState(ChessboardState state) {
-        return pointsOfState.get(state.ordinal());
+        return pointsOfState.get(state.getStatus());
     }
 
     @Override
@@ -99,10 +99,10 @@ public class BasicChessboard implements Chessboard {
     @Override
     public boolean flip(Point point) {
         ChessboardState originalState = getSlotState(point);
-        if(!originalState.hasChessman()) {
-            return false;
+        if(originalState.hasChessman()) {
+            set(point, originalState.getFlip());
         }
-        return set(point, originalState.getFlip());
+        return false;
     }
 
     @Override
@@ -126,7 +126,7 @@ public class BasicChessboard implements Chessboard {
         Point start = move.getStart();
         Point end = move.getEnd();
 
-        ChessboardState originalStartState = getSlotState(start); // should be moveFor
+        // assume the status is already checked by validator, so skip the validation here
         ChessboardState originalEndState = getSlotState(end);     // should be empty
         set(start, originalEndState);
         set(end, moveFor);
@@ -146,9 +146,8 @@ public class BasicChessboard implements Chessboard {
 
     @Override
     public Iterable<Point> getAdjacentCounterparts(Point point) {
-        if(!getSlotState(point).hasChessman()) {
-            throw new IllegalArgumentException("The point has not chessman on it!");
-        }
+        Preconditions.checkState(getSlotState(point).hasChessman(),
+                "The point has not chessman on it!");
 
         ChessboardState reversed = getSlotState(point).getFlip();
         Iterable<Point> counterChessman = getSlotsOfState(reversed);
