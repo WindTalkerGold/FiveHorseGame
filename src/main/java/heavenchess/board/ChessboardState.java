@@ -8,7 +8,7 @@ public enum ChessboardState {
             return LeftOn;
         if(this == LeftOn)
             return RightOn;
-        throw new IllegalArgumentException("state can only be either LeftOn or RightOn!");
+        throw new IllegalArgumentException("Can only flip for LeftOn or RightOn!");
     }
 
     public boolean hasChessman() {

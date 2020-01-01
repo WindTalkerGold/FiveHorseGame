@@ -6,7 +6,7 @@ import heavenchess.ai.AttackEnumerator;
 import heavenchess.board.BasicChessboard;
 import heavenchess.board.Chessboard;
 import heavenchess.board.ChessboardState;
-import heavenchess.movement.AllPossibleMoveProvider;
+import heavenchess.ai.AllPossibleMoveProvider;
 import heavenchess.movement.BasicModeValidator;
 import heavenchess.movement.ChessboardValidator;
 import heavenchess.movement.FlickClampManager;

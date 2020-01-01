@@ -12,8 +12,8 @@ import com.google.common.collect.Iterables;
 public class BasicChessboard implements Chessboard {
     public static final int ChessboardWidth = 5;
     public static final int ChessboardHeight = 5;
-    private ChessboardState[][] chessboard = new ChessboardState[ChessboardHeight][ChessboardWidth];
-    private ArrayList<ArrayList<Point>> pointsOfState = new ArrayList<>();
+    private final ChessboardState[][] chessboard = new ChessboardState[ChessboardHeight][ChessboardWidth];
+    private final ArrayList<ArrayList<Point>> pointsOfState = new ArrayList<>();
 
     public BasicChessboard() {
         for(int i=0;i<4;i++) {
@@ -36,7 +36,7 @@ public class BasicChessboard implements Chessboard {
             }
         }
     }
-
+    
     public BasicChessboard(ChessboardState[][] chessboard) {
         if(chessboard.length != ChessboardHeight) {
             throw new IllegalArgumentException("must have "+ChessboardHeight+" rows");
@@ -102,11 +102,7 @@ public class BasicChessboard implements Chessboard {
         if(!originalState.hasChessman()) {
             return false;
         }
-        ChessboardState newState = originalState.getFlip();
-        chessboard[point.getX()][point.getY()] = newState;
-        pointsOfState.get(originalState.ordinal()).remove(point);
-        pointsOfState.get(newState.ordinal()).add(point);
-        return true;
+        return set(point, originalState.getFlip());
     }
 
     @Override
@@ -130,15 +126,10 @@ public class BasicChessboard implements Chessboard {
         Point start = move.getStart();
         Point end = move.getEnd();
 
-        ChessboardState originalStartState = getSlotState(start);
-        ChessboardState originalEndState = getSlotState(end);
-        chessboard[start.getX()][start.getY()] = originalEndState;
-        chessboard[end.getX()][end.getY()] = originalStartState;
-
-        pointsOfState.get(originalEndState.ordinal()).remove(end);
-        pointsOfState.get(originalEndState.ordinal()).add(start);
-        pointsOfState.get(originalStartState.ordinal()).remove(start);
-        pointsOfState.get(originalStartState.ordinal()).add(end);
+        ChessboardState originalStartState = getSlotState(start); // should be moveFor
+        ChessboardState originalEndState = getSlotState(end);     // should be empty
+        set(start, originalEndState);
+        set(end, moveFor);
         return true;
     }
 
